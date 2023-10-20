@@ -76,7 +76,7 @@ def main():
                         ambushed = 1
                     else:
                         print("You run out of gas and are unable to escape the trap. Game Over!")
-                    done = True
+                        done = True
                 else:
                     print("\nInvalid choice. You hesitate, and the cops capture you. Game over!")
                     done = True
@@ -110,12 +110,12 @@ def main():
                         ambushed = 1
                     else:
                         print("You run out of gas and are unable to escape the trap. Game Over!")
-                    done = True
+                        done = True
                 else:
                     print("Invalid choice. You hesitate, and the cops capture you. Game over!")
                     done = True
         else:
-            print("Invalid choice. Please enter A, B, C, H, D, or E.")
+            print("Invalid choice. Please enter A, B, C, D, E, or Q.")
 
         # Check if the player has won or lost
         if nomads_distance >= miles_traveled:
