@@ -123,6 +123,7 @@ class MyGame(arcade.Window):
 
         self.horn_sound = arcade.load_sound("car-horn-beep-beep-two-beeps-honk-honk-6188.mp3")
         self.crash_sound = arcade.load_sound("clank-car-crash-collision-6206.mp3")
+        self.crash_sound_player = None
 
         arcade.set_background_color(arcade.color.GRANNY_SMITH_APPLE)
 
@@ -140,9 +141,9 @@ class MyGame(arcade.Window):
 
     def update(self, delta_time):
         self.car2.update()
-        if self.car2.position_x < 0 or self.car2.position_x > SCREEN_WIDTH or \
-                self.car2.position_y < 0 or self.car2.position_y > SCREEN_HEIGHT:
-            arcade.play_sound(self.crash_sound)
+        if self.car2.position_x < 20 or self.car2.position_x > SCREEN_WIDTH or self.car2.position_y < 20 or self.car2.position_y > SCREEN_HEIGHT:
+            if self.crash_sound_player or not self.crash_sound_player.playing:
+                self.crash_sound_player = arcade.load_sound("clank-car-crash-collision-6206.mp3")
 
     def on_mouse_motion(self, x, y, dx, dy):
         """ Called to update our objects.
